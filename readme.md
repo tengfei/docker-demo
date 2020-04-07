@@ -12,13 +12,13 @@
 - (optional) user have github account
 - (optinoal) User have local docker client for testing purpose
 
-## Case 1: Use *existing* public docker image that contains the tools you need
+## Case 1: Use existing public docker image that contains the tools you need
 
 1. Use [dockerhub](https://hub.docker.com/) for example, search for keyword like "fastqc"
 2. Find a source you can trust: official build and maintained by author, or third repos, for example, you can find official GATK 4.1 docker image `broadinstitute/gatk:4.1.4.0` on dockerhub or ENCODE chip-seq container at `quay.io/encode-dcc/chip-seq-pipeline:v1.3.6` at quay. 
 3. For testing purpose,  we can use `biocontainers/fastqc:v0.11.8dfsg-2-deb_cv1` which read a fastq and output qc report. 
 
-## Case 2: Build your own tool quickly based on official image like ubuntu or bioconda
+## Case 2: Build your own tool quickly based on official or good quality docker image 
 
 1. Choose base image: for example "ubuntu:18.04" or "bioconda/bioconda-utils-build-env"
 2. Create Dockerfile to explain how the image will be created (bunch of bash script)
@@ -29,11 +29,11 @@
 ```
 docker build --tag bamstats:1.0 .
 ```
-- code example to run interactively 
+- code example to run your docker image interactively 
 ```
 docker run -ti bioconda/bioconda-utils-build-env /bin/bash
 ```
-4. Push to docker hub 
+4. Push to dockerhub 
 - Link your github repo that contaning dockerfile for autobuild on dockerhub
 - Or use command line to push it manually. Example 
 ```
