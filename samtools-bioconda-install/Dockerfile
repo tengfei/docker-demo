@@ -1,2 +1,2 @@
 FROM bioconda/bioconda-utils-build-env
-conda install samtools
+RUN conda install samtools
