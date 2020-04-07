@@ -34,8 +34,8 @@ docker build --tag bamstats:1.0 .
 docker run -ti bioconda/bioconda-utils-build-env /bin/bash
 ```
 4. Push to dockerhub 
-- Link your github repo that contaning dockerfile for autobuild on dockerhub
-- Or use command line to push it manually. Example 
+- Method 1 (autobuild)：Link your github repo that contaning dockerfile for autobuild on dockerhub ([official tutorial](https://docs.docker.com/docker-hub/builds/)) you can find test example here linked on [docker hub](https://hub.docker.com/u/tengfei) for autobuild
+- Method 2 (local): use docker client command line to push it manually. Example 
 ```
 docker push bamstats:1.0
 ```
