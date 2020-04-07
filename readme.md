@@ -22,7 +22,7 @@
 
 1. Choose base image: for example "ubuntu:18.04" or "bioconda/bioconda-utils-build-env"
 2. Create Dockerfile to explain how the image will be created (bunch of bash script)
-- Install third party app directly following their manual ([samtool example](https://github.com/tengfei/docker-demo/tree/master/samtools-bioconda-install) or more complicated [arcasHLA example](https://github.com/tengfei/docker-arcasHLA))
+- Install third party app directly following their manual ([samtool example](https://github.com/tengfei/docker-demo/tree/master/samtools-bioconda-install) or more complicated [arcasHLA example](https://github.com/tengfei/docker-demo/tree/master/arcasHLA))
 - Or add your own script to your docker image ([IEHC WGBS bamstats.py exmaple](https://github.com/tengfei/docker-demo/tree/master/ihec) )
 3. (optional) Build docker image locally and test the image make sure you can execute the script
 - code example to build 
