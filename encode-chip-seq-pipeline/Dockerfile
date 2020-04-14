@@ -15,11 +15,16 @@ RUN bash chip-seq-pipeline2/scripts/uninstall_conda_env.sh
 RUN bash chip-seq-pipeline2/scripts/install_conda_env.sh
 ## WARNING: DO NOT PROCEED TO RUN PIPELINES UNTIL YOU SEE THE FOLLOWING SUCCESS MESSAGE OR PIPELINE WILL NOT WORK.
 ## === All done successfully ===
-## RUN eval "$(conda shell.bash hook)"
+
 SHELL ["conda", "run", "-n", "encode-chip-seq-pipeline", "/bin/bash", "-c"]
-## RUN conda activate encode-chip-seq-pipeline
+
 
 ## install caper / croo / qc2tsv AGAIN 
 RUN pip install caper croo qc2tsv
+ADD init_conda.sh .
+## ENTRYPOINT ["conda", "run", "-n", "myenv", "init_conda.sh"]
+ENTRYPOINT ["./init_conda.sh"]
+## RUN eval "$(conda shell.bash hook)"
+## RUN conda activate encode-chip-seq-pipeline
+## RUN caper init local
 
-RUN caper init local
