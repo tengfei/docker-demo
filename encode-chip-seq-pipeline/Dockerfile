@@ -12,7 +12,8 @@ RUN bash chip-seq-pipeline2/scripts/uninstall_conda_env.sh
 RUN bash chip-seq-pipeline2/scripts/install_conda_env.sh
 ## WARNING: DO NOT PROCEED TO RUN PIPELINES UNTIL YOU SEE THE FOLLOWING SUCCESS MESSAGE OR PIPELINE WILL NOT WORK.
 ## === All done successfully ===
-
+RUN conda init bash
+RUN exec bash
 RUN conda activate encode-chip-seq-pipeline
 
 ## install caper / croo / qc2tsv AGAIN 
