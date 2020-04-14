@@ -5,19 +5,19 @@ RUN apt-get update -y && apt-get install -y git
 ## clone pipeline
 RUN git clone https://github.com/ENCODE-DCC/chip-seq-pipeline2
 
-## IMPORTANT: Close your session and re-login. If you skip this step then pipeline's Conda environment will be messed up with base Conda environment.
-RUN exec bash
-## Disable auto activation of base Conda enrivonment
-
+## 
 RUN  conda config --set auto_activate_base false
 RUN  exec bash
+
 ## Install pipeline's Conda environment.
+
 RUN bash chip-seq-pipeline2/scripts/uninstall_conda_env.sh
 RUN bash chip-seq-pipeline2/scripts/install_conda_env.sh
 ## WARNING: DO NOT PROCEED TO RUN PIPELINES UNTIL YOU SEE THE FOLLOWING SUCCESS MESSAGE OR PIPELINE WILL NOT WORK.
 ## === All done successfully ===
 ## RUN eval "$(conda shell.bash hook)"
-RUN conda activate encode-chip-seq-pipeline
+SHELL ["conda", "run", "-n", "encode-chip-seq-pipeline", "/bin/bash", "-c"]
+## RUN conda activate encode-chip-seq-pipeline
 
 ## install caper / croo / qc2tsv AGAIN 
 RUN pip install caper croo qc2tsv
