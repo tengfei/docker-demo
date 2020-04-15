@@ -1,5 +1,5 @@
 FROM conda/miniconda3
-RUN apt-get update -y && apt-get install -y git
+RUN apt-get update -y && apt-get install -y git vim
 ## Instruction: https://github.com/ENCODE-DCC/chip-seq-pipeline2/blob/master/docs/install_conda.md
 
 ## clone pipeline
