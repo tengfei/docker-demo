@@ -1,5 +1,9 @@
 FROM conda/miniconda3
-RUN apt-get update -y && apt-get install -y git nano libssl-dev
+
+## libssl1.0.0 for ubuntu 18.04 ...
+RUN echo "deb http://security.debian.org/debian-security jessie/updates main" | tee -a /etc/apt/sources.list
+RUN apt-get update -y && apt-get install -y git nano libssl-dev libssl1.0.0 
+
 ## Instruction: https://github.com/ENCODE-DCC/chip-seq-pipeline2/blob/master/docs/install_conda.md
 
 ## clone pipeline
