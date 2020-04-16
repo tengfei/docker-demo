@@ -17,7 +17,9 @@ caper run /chip-seq-pipeline2/chip.wdl -i $INPUT_JSON
 ## Assume it's in the folder where this script is executed e.g. in default ~/chipseq-run/
 echo "croo is collecting outputs"
 METAFILE=$(ls -t ./chip/*/metadata.json| head -1)
-OUTDIR=${2:-/enigma/local_storage/chipseq-run}
+OUTDIR_BASE=$(basename $(pwd))
+## use default current folder name or use second parameters to specify output folder in local_storage
+OUTDIR=${2:-/enigma/local_storage/$OUTDIR_BASE}
 OUTDIR=$(realpath $OUTDIR)
 croo $METAFILE --method copy  --out-dir $OUTDIR 
 
