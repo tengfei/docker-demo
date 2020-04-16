@@ -30,8 +30,8 @@ RUN mkdir -p /root/tmp
 RUN sed -i 's#tmp-dir=#tmp-dir=/root/tmp#g' /root/.caper/default.conf
 
 ## make tutorial folder
-RUN mkdir /root/chipseq-run/bin/
-RUN export PATH=/root/chipseq-run/bin/:$PATH
+RUN mkdir -p /root/chipseq-run/bin/
+ENV PATH "/root/chipseq-run/bin/:$PATH"
 WORKDIR /root/chipseq-run/
 
 ADD caper_run.sh /root/chipseq-run/bin/
