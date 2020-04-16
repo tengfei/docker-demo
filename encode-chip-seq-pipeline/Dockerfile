@@ -2,7 +2,7 @@ FROM conda/miniconda3
 
 ## libssl1.0.0 for ubuntu 18.04 ...
 RUN echo "deb http://security.debian.org/debian-security jessie/updates main" | tee -a /etc/apt/sources.list
-RUN apt-get update -y && apt-get install -y git wget nano libssl-dev libssl1.0.0 
+RUN apt-get update -y && apt-get install -y git wget nano libssl-dev libssl1.0.0 graphviz
 
 ## Instruction: https://github.com/ENCODE-DCC/chip-seq-pipeline2/blob/master/docs/install_conda.md
 
@@ -21,7 +21,7 @@ RUN bash chip-seq-pipeline2/scripts/install_conda_env.sh
 ## === All done successfully ===
 
 SHELL ["conda", "run", "-n", "encode-chip-seq-pipeline", "/bin/bash", "-c"]
-RUN pip install caper --upgrade
+RUN pip install caper croo qc2tsv --upgrade
 RUN  caper init local
 ## RUN conda update  phantompeakqualtools -c bioconda
 ## RUN pip install caper croo qc2tsv
@@ -32,13 +32,10 @@ RUN sed -i 's#tmp-dir=#tmp-dir=/root/tmp#g' /root/.caper/default.conf
 ## make tutorial folder
 RUN mkdir /root/chipseq-run/
 WORKDIR /root/chipseq-run/
-RUN wget https://raw.githubusercontent.com/tengfei/docker-demo/master/encode-chip-seq-pipeline/test/bip_ENCSR000DYI_subsampled.json
-RUN wget https://raw.githubusercontent.com/tengfei/docker-demo/master/encode-chip-seq-pipeline/test/hg38_bip.tsv
-RUN wget https://raw.githubusercontent.com/tengfei/docker-demo/master/encode-chip-seq-pipeline/test/bip_ENCSR000DYI.json
-RUN wget https://raw.githubusercontent.com/tengfei/docker-demo/master/encode-chip-seq-pipeline/test/bip_ENCSR203KEU.json
 
 ADD caper_run.sh .
 ADD download_test_job.sh .
+RUN ./download_test_job.sh
 
 
 
