@@ -1,14 +1,13 @@
 {
-    "chip.qc_report.qc_json_ref" : "gs://encode-pipeline-test-samples/encode-chip-seq-pipeline/ref_output/v1.1.5/ENCSR000DYI/qc.json",
     "chip.pipeline_type" : "tf",
-    "chip.genome_tsv" : "gs://encode-pipeline-genome-data/genome_tsv/v1/hg38_gcp.tsv",
-    "chip.fastqs_rep1_R1" : ["gs://encode-pipeline-test-samples/encode-chip-seq-pipeline/ENCSR000DYI/fastq/rep1.fastq.gz"
+    "chip.genome_tsv" : "/root/chipseq-run/hg38_bip.tsv",
+    "chip.fastqs_rep1_R1" : ["/enigma/datasets/bbf46c35-9df6-49b9-85e5-03dcba3dfaa2/encode-pipeline-test-samples/ENCSR000DYI/fastq/rep1.fastq.gz"
     ],
-    "chip.fastqs_rep2_R1" : ["gs://encode-pipeline-test-samples/encode-chip-seq-pipeline/ENCSR000DYI/fastq/rep2.fastq.gz"
+    "chip.fastqs_rep2_R1" : ["/enigma/datasets/bbf46c35-9df6-49b9-85e5-03dcba3dfaa2/encode-pipeline-test-samples/ENCSR000DYI/fastq/rep2.fastq.gz"
     ],
-    "chip.ctl_fastqs_rep1_R1" : ["gs://encode-pipeline-test-samples/encode-chip-seq-pipeline/ENCSR000DYI/fastq/ctl1.fastq.gz"
+    "chip.ctl_fastqs_rep1_R1" : ["/enigma/datasets/bbf46c35-9df6-49b9-85e5-03dcba3dfaa2/encode-pipeline-test-samples/ENCSR000DYI/fastq/ctl1.fastq.gz"
     ],
-    "chip.ctl_fastqs_rep2_R1" : ["gs://encode-pipeline-test-samples/encode-chip-seq-pipeline/ENCSR000DYI/fastq/ctl2.fastq.gz"
+    "chip.ctl_fastqs_rep2_R1" : ["/enigma/datasets/bbf46c35-9df6-49b9-85e5-03dcba3dfaa2/encode-pipeline-test-samples/ENCSR000DYI/fastq/ctl2.fastq.gz"
     ],
     "chip.paired_end" : false,
     "chip.always_use_pooled_ctl" : true,
