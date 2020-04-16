@@ -1,3 +1,11 @@
+## Requirements
+
+1. Please check and edit the [hg38_bip.tsv](https://github.com/tengfei/docker-demo/blob/master/encode-chip-seq-pipeline/test/hg38_bip.tsv) under the `test` folder, to make sure the absolute path is correct for all mounted files
+
+2. Please check and edit the **input job json** under `test` folder, make sure the absolute path for your data is correct 
+
+3. WARNING: `caper init local` used, so only local mode now. 
+
 ## Prepare docker runner
 
 1. Mount datasets "ENCODE"
