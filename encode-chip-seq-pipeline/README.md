@@ -29,7 +29,7 @@ How to use?
 - it accepts one required positional argument: input job json, you will find couple `/root/chipseq-run/`
 - it accepts second optional positional argument: output folder will be available under `/enigma/local_storage/` by default, if will create a folder where you execute your command, if you execute your command in `/root/chipseq-run/` directly, it will collect outputs into `/enigma/local_storage/chipseq-run/`. Because we will be running multiple example, so we create folder for each example and run exmaple code from there. See below. 
 
-## Test run
+## Test run example
 
 ```
 ## you should be here by default
