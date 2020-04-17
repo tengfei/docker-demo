@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ## libssl1.0.0 for ubuntu 18.04 ...
-RUN apt-get update -y && apt-get install -y git wget gnupg
+RUN apt-get update -y && apt-get install -y git wget gnupg nano
 RUN echo "deb http://security.debian.org/debian-security jessie/updates main" | tee -a /etc/apt/sources.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9D6D8F6BC857C906 AA8E81B4331F7F50
 RUN apt-get update -y && apt-get install -y libssl1.0.0

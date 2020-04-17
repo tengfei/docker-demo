@@ -1,5 +1,10 @@
 #!/bin/bash
 ## Step1: activating conda env
+## put this inside bash script
+echo "porting ..."
+eval "$(conda shell.bash hook)"
+
+## activating
 echo "activating encode-chip-seq-pipeline ... "
 conda activate encode-chip-seq-pipeline
 
