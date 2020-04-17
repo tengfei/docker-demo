@@ -81,12 +81,12 @@ Parameter|Description
 
 ### Pipeline parameters
 
-**IMPORTANT** changed `chip.true_rep_only` to `true`, official default is `false`
+**IMPORTANT** if pseudo replicate generation and all related analyses caused trouble, datq quality or other problem, try change `chip.true_rep_only` to `true`
 
 Parameter|Default|Description
 ---------|-------|-----------
 `chip.pipeline_type`| `tf` | `tf` for TF ChIP-seq or `histone` for Histone ChIP-seq.
-`chip.true_rep_only` | true | Disable pseudo replicate generation and all related analyses
+`chip.true_rep_only` | false | Disable pseudo replicate generation and all related analyses
 
 ### Reference genome
 
