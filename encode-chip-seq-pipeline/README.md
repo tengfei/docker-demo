@@ -86,7 +86,7 @@ Parameter|Description
 Parameter|Default|Description
 ---------|-------|-----------
 `chip.pipeline_type`| `tf` | `tf` for TF ChIP-seq or `histone` for Histone ChIP-seq.
-`chip.true_rep_only` | false | Disable pseudo replicate generation and all related analyses
+`chip.true_rep_only` | true | Disable pseudo replicate generation and all related analyses
 
 ### Reference genome
 
