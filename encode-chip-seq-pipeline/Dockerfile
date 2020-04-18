@@ -45,7 +45,6 @@ RUN mkdir -p /root/tmp
 RUN sed -i 's#tmp-dir=#tmp-dir=/root/tmp#g' /root/.caper/default.conf
 
 ## make tutorial folder
-RUN mkdir -p /root/chipseq-run/bin/
 WORKDIR /root/chipseq-run/
 
 ## add scripts
