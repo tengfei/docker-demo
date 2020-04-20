@@ -126,12 +126,6 @@ Parameter|Type|Default|Description
 `chip.aligner` | String | bowtie2 | Currently supported aligners: bwa and bowtie2. 
 `chip.use_bwa_mem_for_pe` | Boolean | false | Currently supported aligners: bwa and bowtie2. To use your own custom aligner, see the below parameter.
 
-## Optional filtering parameters
-
-Parameter|Default|Description
----------|-------|-----------
-`chip.mapq_thresh` | 30 for bwa, 255 for bowtie2 | Threshold for mapped reads quality (samtools view -q). If not defined, automatically determined according to aligner.
-
 
 ## Optional control parameters
 
