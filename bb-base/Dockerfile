@@ -59,6 +59,6 @@ RUN conda config --add channels conda-forge
 RUN conda install cromwell
 RUN pip3 install toil[aws,mesos,azure,google,encryption,cwl]
 
-RUN conda install samtools bwa bowtie hisat2 star stringtie htseq fastqc bedtools seqtk snpeff 
+RUN conda install samtools bwa bowtie hisat2 star star-fusion stringtie htseq fastqc bedtools seqtk snpeff 
 RUN conda install bioconductor-ballgown bioconductor-limma bioconductor-deseq2
 
