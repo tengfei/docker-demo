@@ -56,9 +56,23 @@ RUN exec bash
 RUN conda config --add channels defaults
 RUN conda config --add channels bioconda
 RUN conda config --add channels conda-forge
+
+## Install pipeline engine
 RUN conda install cromwell
 RUN pip3 install toil[aws,mesos,azure,google,encryption,cwl]
 
+## Install popular bioinformatics tools
 RUN conda install samtools bwa bowtie hisat2 star star-fusion stringtie htseq fastqc bedtools seqtk snpeff 
-RUN conda install bioconductor-ballgown bioconductor-limma bioconductor-deseq2
+
+## Install popular python tools
+RUN conda install numpy scipy matplotlib statsmodels pandas
+
+## Install popular R CRAN tools
+RUN conda install r r-tidyverse r-survival r-survminer r-rcolorbrewer 
+
+## Install popular R Bioconductor tools
+RUN conda install bioconductor-ballgown bioconductor-limma bioconductor-deseq2 
+RUN conda install bioconductor-complexheatmap
+
+
 
