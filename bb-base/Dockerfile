@@ -68,7 +68,7 @@ RUN conda install samtools bwa bowtie hisat2 star star-fusion stringtie htseq fa
 RUN conda install numpy scipy matplotlib statsmodels pandas
 
 ## Install popular R CRAN tools
-RUN conda install r r-tidyverse r-survival r-survminer r-rcolorbrewer r-xlsx
+RUN conda install r r-tidyverse r-survival r-survminer r-rcolorbrewer r-xlsx r-gplots
 
 ## Install popular R Bioconductor tools
 RUN conda install bioconductor-ballgown bioconductor-limma bioconductor-deseq2 bioconductor-edger
